@@ -1,0 +1,9 @@
+{
+	"extensions":
+	[
+		"dunstrc",
+		"conf",
+		"environment",
+		"lfrc",
+	],
+}

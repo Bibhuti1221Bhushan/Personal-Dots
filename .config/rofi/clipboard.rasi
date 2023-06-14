@@ -1,0 +1,139 @@
+
+/*      
+ *    ██████╗  ██████╗ ███████╗██╗
+ *    ██╔══██╗██╔═══██╗██╔════╝██║
+ *    ██████╔╝██║   ██║█████╗  ██║
+ *    ██╔══██╗██║   ██║██╔══╝  ██║
+ *    ██║  ██║╚██████╔╝██║     ██║
+ *    ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝
+ *  
+ */                          
+
+/*
+* {
+  accent:           #a5c6e1;    
+  background:       #282e38;
+  background-light: #2e3440;
+  background-focus: #373e4d;
+  foreground:       #bfbfcb;
+  background-search:#2e3440;     
+  placeholder:      #6e6a86;     
+  menu-bg:          #fab387;     
+  on:               #ccd389;
+  off:              #eca8a8;
+}*/
+
+* {
+  accent:           #a5c6e1;
+  background:       #191724;
+  background-light: #2e3440;
+  background-focus: #373e4d;
+  foreground:       #bfbfcb;
+  background-search:#26233A;     
+  placeholder:      #6e6a86;     
+  menu-bg:          #fab387;     
+  on:               #ccd389;
+  off:              #eca8a8;
+}
+
+* {
+  text-font:                            "Source Code Pro SemiBold 10";
+  inputbar-margin:                      3px 3px;
+  prompt-padding:                       10px 10px;
+  entry-padding:                        10px 0px 10px 0px;
+  list-element-padding:                 8px 10px 8px 10px;
+  list-element-margin:                  3px;
+  list-element-border:                  0px 0px 0px 4px;
+  apps-textbox-prompt-colon-padding:    10px -5px 0px 0px;
+}
+
+element-icon { 
+  padding: 5px 5px 5px 0px;
+  size: 2ch; 
+}
+
+#window {
+  width: 400px;
+  height: 500px;
+  padding: 20px 20px 0px 20px;
+  border-radius: 10px;
+}
+
+* {
+  background-color: @background;
+  text-color: @foreground;
+  font: @text-font;
+}
+
+inputbar,
+prompt,
+textbox-prompt-colon,
+entry {
+  background-color: @background-light;
+}
+
+
+inputbar {
+  children: [ prompt, textbox-prompt-colon, entry ];
+  margin: @inputbar-margin;
+}
+
+prompt {
+  padding: @prompt-padding;
+  background-color: @accent;
+  text-color: @background;
+  enabled: false;
+}
+
+textbox-prompt-colon {
+  font: "Source Code Pro Bold 10";
+  expand: false;
+  str: " CLIPBOARD ";
+  background-color: @menu-bg;
+  text-color: #383434;
+  padding: @prompt-padding;
+  border-radius: 3px;
+  border-bottom-left-radius: 4px;
+}
+
+
+entry {
+  background-color: @background-search;        
+  text-color: @foreground;                      
+  expand: true;
+  vertical-align: 0.5;
+  horizontal-align: 0;
+  padding: @list-element-padding;
+  placeholder: "Global Search";
+  placeholder-color: @placeholder;            
+  blink: true;
+}
+
+inputbar {
+  border-radius: 5px;
+}
+
+element {
+  padding: @list-element-padding;
+  margin: @list-element-margin;
+  border: @list-element-border;
+  background-color: @background-light;
+  border-color: @background-light;
+  border-radius: 2px;
+}
+
+element,
+element-icon,
+element-text {
+  background-color: @background-light;
+  border-color: @background-light;
+}
+
+element.selected, 
+element-icon.selected,
+element-text.selected  {
+  background-color: @background-focus;
+  text-color: @accent;
+  border-color: @accent;
+}
+

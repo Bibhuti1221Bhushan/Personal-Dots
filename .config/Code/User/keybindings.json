@@ -1,0 +1,17 @@
+// PLACE YOUR KEY BINDINGS IN THIS FILE TO OVERRIDE THE DEFAULTS
+
+[
+    {
+        "key": "ctrl+k ctrl+u",
+        "command": "-editor.action.removeCommentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+k ctrl+u",
+        "command": "editor.action.transformToUppercase"
+    },
+    {
+        "key": "ctrl+u ctrl+k",
+        "command": "editor.action.transformToLowercase"
+    }
+]

@@ -1,0 +1,200 @@
+
+//     ██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
+//     ██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+//     ██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝
+//     ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+//     ╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
+//      ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+{
+    "layer": "top", 
+    "position": "top", 
+    "width": 0, 
+    "mod": "dock",
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
+    "modules-left": [
+            "custom/apple", 
+            "memory",  
+            "cpu", 
+            "temperature", 
+            "bluetooth",
+            "clock",
+            "wlr/workspaces", 
+        ],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+            "tray",
+            "network",
+            // "network#bandwidth",
+            "pulseaudio",
+            "pulseaudio#microphone", 
+            "backlight", 
+            "battery",
+        ],
+
+    "custom/apple": {
+        "format": "",
+        "on-click": "killall rofi || rofi -show drun -theme ~/.config/rofi/launcher.rasi",
+        "tooltip": false,
+    },
+
+    "clock": {
+        "interval": 10,
+        "format": "{: %I:%M   %a %d}",
+        "format-alt": "{: %I:%M %p   %a %d-%m-%y}",
+        "tooltip-format": "{:%r   %a %d %m %Y}",
+        "tooltip": false,
+    },
+
+    "wlr/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true,
+        "format": "{icon}",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "11": "11",
+            "12": "12",
+            "13": "13",
+            "14": "14",
+            "15": "15",
+        },
+    },
+
+    "hyprland/window": {
+        "format": "{}"
+    },
+
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10,
+        "tooltip": false,
+    },
+
+    "network": {
+        "interval": 5,
+        "format-wifi": " {essid}",         // ADD IF NEEDED  " {bandwidthTotalBytes}"
+        "format-alt": " {essid} ({signalStrength}%)",
+        "format-ethernet": " Connected",
+        "format-linked": " No Internet",
+        "format-disconnected": " Disconnected",
+        "tooltip-format-wifi": "Wi-Fi : {essid}",
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip": false,
+    },
+
+    // "network#bandwidth": {
+    //     "interval": 1,
+    //     "format-wifi": " {bandwidthTotalBytes}",
+    //     "tooltip-format-wifi": "Wi-Fi : {essid}",
+    //     "tooltip-format-disconnected": "Disconnected",
+    //     "tooltip": false,
+    // },
+
+    "bluetooth": {
+        "format-on": "  ON",
+        "format-off": "  OFF",
+        // "format-connected": "  {num_connections} Connected",
+        "format-connected": "  {device_alias}",
+        // "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        // "format-disabled": "  Disabled",
+        "on-click": "$HOME/.config/scripts/bluetooth-on-off",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "tooltip": false,
+    },
+
+    "memory": {
+        "interval": 10,
+        "format": " {}%",
+        "states": {
+            "warning": 70,
+            "critical": 90,
+        },
+        "tooltip-format": "{total:0.1f} Gib : {used:1f} Gib",
+        "tooltip": false,
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "tooltip": false,
+    },
+   
+    "temperature": {
+        "critical-threshold": 80,
+        "format-critical": "{temperatureC}°C {icon}",
+        "format": "{icon} {temperatureC}°C",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+    },
+
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": " Muted",
+        "on-click": "pamixer -t",
+        "on-scroll-up": "pamixer -i 1",
+        "on-scroll-down": "pamixer -d 1",
+        "scroll-step": 1,
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""],
+            },   
+        "tooltip": false,     
+    },
+
+    "pulseaudio#microphone": {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": " Muted",
+        "on-click": "pamixer --default-source -t",
+        "on-scroll-up": "pamixer --default-source -i 1",
+        "on-scroll-down": "pamixer --default-source -d 1",
+        "scroll-step": 1,
+        "tooltip": false,
+    },
+
+     "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon} {percent}%",
+        "format-icons": [""],                          // --IF NEEDED ""
+        "on-scroll-up": "brightnessctl set 1%+",
+        "on-scroll-down": "brightnessctl set 1%-",
+        "on-click": "brightnessctl set 69%",
+        "tooltip": false,
+    },
+
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+            },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": ["", "", "", "", ""],
+        "tooltip": false,
+    },
+}
+
+
+

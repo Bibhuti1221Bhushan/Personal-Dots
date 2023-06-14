@@ -1,0 +1,47 @@
+#  ▄▀█   █     █   ▄▀█   █▀
+#  █▀█   █▄▄   █   █▀█   ▄█
+
+# COMMONS ALIAS
+alias cpp="cp -iv"
+alias cp="cp -rf"
+alias mvv="mv -iv"
+alias mv="mv -rf"
+alias rmm="rm -vI"
+alias rm="rm -rf"
+alias bc="bc -ql"
+alias mkd="mkdir -pv"
+alias l="exa --group-directories-first"
+alias ll="exa -l --group-directories-first"
+alias ls='exa -a -s type'
+alias lsl='exa -1 -a -l -s type'
+alias cat='bat'
+alias grep='grep --color=always'
+
+alias keys='sed -n l'
+alias fonts='fc-cache -fv'
+alias shutdown='shutdown -h now --no-wall'
+alias poweroff='shutdown -h now --no-wall'
+
+# TTY APPLICATION ALIAS
+alias vi="nvim"
+alias vim="nvim"
+alias music="ncmpcpp"
+alias nm="ncmpcpp"
+alias clock='tty-clock -c -C 4 -t -D'
+alias pipes='pipes.sh -t 9'
+alias swaylock='swaylock --effect-blur 7x2 --screenshot --ignore-empty-password --indicator --clock --timestr %I:%M --datestr %a,%d-%m-%Y --font BebasNeue'
+alias yt='youtube-dl --extract-audio --add-metadata --xattrs --embed-thumbnail --audio-quality 0 --audio-format mp3'
+alias ytv='youtube-dl --merge-output-format mp4 -f "bestvideo+bestaudio[ext=m4a]/best" --embed-thumbnail --add-metadata'
+
+# PACMAN ALIAS
+alias install='sudo pacman -S'
+alias update='sudo pacman -Syu'
+
+# GIT ALIAS
+alias cdc='cd $HOME/Downloads/Repos'
+alias gc='git clone'
+alias sddm-theme='sddm-greeter --test-mode --theme'
+
+# DOT-FILES CONFIG ALIAS
+alias zconf="subl ~/.config/zsh/.zshrc"
+alias ttyfonts="ls -l /usr/share/kbd/consolefonts/ | grep -i ".psfu.gz""

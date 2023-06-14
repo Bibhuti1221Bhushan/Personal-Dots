@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+# GENERATE AN ~/.XAUTHORITY FILE IF THERE IS NONE
+# SUBLIME TEXT NEEDS IT TO SAVE AS SUDO AND OTHER APPS
+xauth_file=$(xauth -q info | grep "Xauthority" |awk -F ":" '{print$2}' | tr -d ' ')
+if [ ! -f $xauth_file ]; then
+  xauth gen $DISPLAY &> /dev/null
+fi

@@ -1,0 +1,57 @@
+//   VISUAL STUDIO CODE SETTING  
+
+{
+//  GLOBAL SETTING   
+    "editor.mouseWheelZoom": true,
+    "window.zoomLevel": -0.5,
+    "workbench.startupEditor": "none",
+    "editor.accessibilitySupport": "off",
+    "editor.smoothScrolling": true,
+
+//  THEMING SETTINGS
+    "workbench.iconTheme": "a-file-icon-vscode",
+    "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "editor.guides.bracketPairs": "active",
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.minimap.enabled": false,
+    "editor.cursorBlinking": "expand",
+    "editor.cursorWidth": 3,
+
+//  FONTS SETTINGS
+    "editor.fontFamily": "'JetbrainsMono Nerd Font'",
+    "editor.fontSize": 13,
+
+//  COMMON SETTINGS
+    "editor.folding": false,
+    "editor.foldingHighlight": false,
+    "editor.foldingStrategy": "indentation",
+    "editor.formatOnPaste": true,
+    
+    "editor.hover.enabled": false,
+    "editor.hover.sticky": false,
+    "editor.hover.above": false,
+    // "editor.inlayHints.enabled": "off",
+    // "editor.parameterHints.cycle": false,
+    // "editor.parameterHints.enabled": false,
+
+    "git.openRepositoryInParentFolders": "always",
+    "terminal.integrated.tabFocusMode": false,
+    "workbench.activityBar.visible": false,
+
+//  EXCLUDE FILES SETTINGS
+    "files.exclude": {
+        "**/.git": false
+    },
+
+//  PROBLEMS & WARNING SETTINGS
+    "css.validate": false,
+    "json.validate": false,
+    
+    
+//  ADD LANGUAGE SETTING
+    "files.associations": {
+        "*.rasi": "css"
+    },
+   
+}

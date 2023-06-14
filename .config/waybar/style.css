@@ -1,0 +1,378 @@
+
+/*
+ *   ██╗    ██╗ █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ 
+ *   ██║    ██║██╔══██╗╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+ *   ██║ █╗ ██║███████║ ╚████╔╝ ██████╔╝███████║██████╔╝
+ *   ██║███╗██║██╔══██║  ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+ *   ╚███╔███╔╝██║  ██║   ██║   ██████╔╝██║  ██║██║  ██║
+ *    ╚══╝╚══╝ ╚═╝  ╚═╝   ╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+ */                      
+
+@keyframes blink-warning {
+    50% {
+        color: @light;
+    }
+
+    to {
+        color: @light;
+        background-color: @warning;
+    }
+}
+
+@keyframes blink-critical {
+    50% {
+      color: @light;
+    }
+
+    to {
+        color: @light;
+        background-color: @critical;
+    }
+}
+
+/*
+ * -------------------------------
+ *   █▀   ▀█▀   █▄█   █     █▀▀
+ *   ▄█    █     █    █▄▄   ██▄
+ * -------------------------------
+ */
+
+/* --- COLORS --- */
+/* 
+@define-color bg #353C4A;
+@define-color light #eceff4;
+@define-color dark #2e3440;
+@define-color warning #ebcb8b;
+@define-color critical #d08770;
+@define-color mode #4c566a;
+@define-color workspaces @bg;
+@define-color workspacesfocused #434C5E;
+@define-color tray @workspacesfocused;
+@define-color sound #46536A;
+@define-color network #5D7096;
+@define-color memory #546484;
+@define-color cpu #596A8D;
+@define-color temp #4D5C78;
+@define-color layout #5e81ac;
+@define-color battery #88d089;
+@define-color date #2e3440;
+@define-color time #3A4253;
+@define-color backlight #3F495D; 
+*/
+
+/* --- NORD COLORS --- */
+
+@define-color bg #353C4A;
+@define-color light #cdd6f4;
+@define-color dark #2e3440;
+@define-color warning #ebcb8b;
+@define-color critical #d08770;
+@define-color mode #1e1e2e;
+@define-color tooltip #1e1e2e;
+@define-color window #1e1e2e;
+@define-color waybar #1e1e2e;
+@define-color workspaces #1e1e2e;
+@define-color workspacesfocused #1e1e2e;
+@define-color tray #1e1e2e;
+@define-color sound #1e1e2e;
+@define-color network #1e1e2e;
+@define-color memory #1e1e2e;
+@define-color cpu #1e1e2e;
+@define-color temp #1e1e2e;
+@define-color layout #1e1e2e;
+@define-color battery #1e1e2e;
+@define-color date #1e1e2e;
+@define-color time #1e1e2e;
+@define-color backlight #1e1e2e;
+@define-color apple #1e1e2e;
+
+/* BUTTONS - COLORS */
+@define-color button-fg-active #f9e2af;
+@define-color button-bg-active #171526;
+@define-color button-fg-focus #a6adc8;
+@define-color button-bg-focus #26233a;
+@define-color button-bg-urgent #b7e8b3;
+@define-color button-bg-hover #11111b;
+
+/* RESET ALL STYLES */
+* {
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/* THE WHOLE BAR */
+#waybar {
+    background: rgba(0,0,0,0);
+    color: @light;
+    font-family: "Noto Sans", "Font Awesome 6 Free";
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* TOOLTIP */
+tooltip {
+    background: @tooltip;
+    border-radius: 10px;
+    margin: 50px;
+    font-size: 0%;
+}
+
+/* EACH MODULE */
+#battery,
+#cpu,
+#custom-layout,
+#mode,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#custom-alsa,
+#backlight {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 5px;
+    margin-top: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+#bluetooth {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    margin-top: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+#memory {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+#clock {
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 5px;
+    margin-top: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+}
+
+#custom-apple {
+    padding-left: 8px;
+    padding-right: 8px;
+    margin-right: 5px;
+    margin-top: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin-bottom: 3px;
+}
+
+/* EACH MODULE THAT SHOULD BLINK */
+#mode,
+#memory,
+#temperature,
+#battery {
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+/* EACH CRITICAL MODULE */
+#memory.critical,
+#cpu.critical,
+#temperature.critical,
+#battery.critical {
+    color: @critical;
+}
+
+/* EACH CRITICAL THAT SHOULD BLINK */
+#mode,
+#memory.critical,
+#temperature.critical,
+#battery.critical.discharging {
+    animation-name: blink-critical;
+    animation-duration: 2s;
+}
+
+/* EACH WARNING */
+#network.disconnected,
+#memory.warning,
+#cpu.warning,
+#temperature.warning,
+#battery.warning {
+    color: @warning;
+}
+
+
+/* EACH WARNING THAT SHOULD BLINK */
+#battery.warning.discharging {
+    animation-name: blink-warning;
+    animation-duration: 3s;
+}
+
+/*
+ * ------------------------------
+ *    █▀▄▀█   █   █▀    █▀▀
+ *    █ ▀ █   █   ▄█    █▄▄
+ * ------------------------------
+ */
+
+/* SHOWN CURRENT SWAY MODE (RESIZE ETC.) */
+#mode { 
+	color: @light;
+	background: @mode;
+}
+
+/* WORKSPACES STUFF */
+
+#workspaces {
+    border-radius: 8px;
+}
+
+
+#workspaces button {
+	font-weight: bold;
+	padding-left: 10px;
+	padding-right: 10px;
+	color: @light;
+	background: @workspaces;
+    border-radius: 50%;
+    margin-top: 4px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 3px;
+    margin-right: 1px;
+
+}
+
+#workspaces button.active {
+    color: @button-fg-active;
+    background: @button-bg-active;
+    font-weight: bolder;
+}
+
+#workspaces button.focused {
+    color: @button-fg-focus;
+    background: @button-bg-focus;
+    border-radius: 100px;
+}
+
+#workspaces button.urgent {
+    color: @button-fg-active;
+    background: @button-bg-urgent;
+    border-radius: 100px;
+}
+
+#workspaces button:hover {
+    background: @button-bg-hover;
+    color: @button-fg-focus;
+    border-radius: 100px;
+}
+
+#window {
+    background: @window;
+    padding: 0px 10px 0px 10px;
+    border-radius: 10px;
+	margin-right: 60px;
+	margin-left: 60px;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+
+#custom-alsa {
+	background: @sound;
+    border-radius: 8px;
+
+}
+
+#network {
+    background: @network;
+    border-radius: 8px;
+}
+
+#memory {
+    background: @memory;
+    border-radius: 8px;
+}
+
+#cpu {
+    background: @cpu;
+    border-radius: 8px;
+}
+
+#temperature {
+    background: @temp;
+    border-radius: 8px;
+    margin-right: 5px;
+}
+
+#custom-layout {
+    background: @layout;
+    border-radius: 8px;
+}
+
+#battery {
+    background: @battery;
+    border-radius: 8px;
+    border-top-right-radius: 16px;
+    margin-right: 5px;
+}
+
+#backlight {
+	background: @backlight;
+    border-radius: 8px;
+}
+
+#clock {
+    background: @date;
+    border-radius: 8px;
+}
+
+#bluetooth {
+    background: @sound;
+    border-radius: 8px;
+}
+
+
+#pulseaudio {
+    background: @sound;
+    border-radius: 8px;
+}
+
+
+#tray {
+	background: @tray;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+#tray menu {
+    background: @tray;
+    border-radius: 5px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+#custom-apple {
+    font-size: 17px;
+    background: @apple;
+    border-radius: 8px;
+    border-top-left-radius: 16px;
+    margin-left: 5px;
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
