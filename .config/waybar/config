@@ -19,7 +19,7 @@
             "memory",  
             "cpu", 
             "temperature", 
-            "bluetooth",
+            // "bluetooth",
             "clock",
             "wlr/workspaces", 
         ],
