@@ -285,8 +285,8 @@ tooltip {
     background: @window;
     padding: 0px 10px 0px 10px;
     border-radius: 10px;
-	margin-right: 60px;
-	margin-left: 60px;
+	margin-right: 50px;
+	margin-left: 10px;
     margin-top: 4px;
     margin-bottom: 3px;
 }
