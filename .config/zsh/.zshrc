@@ -12,7 +12,7 @@ export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
 export PATH=$HOME/.config/scripts:/usr/local/bin:$PATH
 
 # SOURCING ALIAS FILE
-[ -f "${XDG_CONFIG_HOME}/zsh/alias" ] && source "${XDG_CONFIG_HOME}/zsh/alias"
+[ -f "${XDG_CONFIG_HOME}/zsh/aliasrc" ] && source "${XDG_CONFIG_HOME}/zsh/aliasrc"
 
 # PATH TO YOUR OH-MY-ZSH INSTALLATION.
 export EDITOR='nvim'       # --SET NEOVIM AS DEFAULT TERMINAL EDITOR
