@@ -42,8 +42,8 @@
 
     "clock": {
         "interval": 10,
-        "format": "{: %I:%M   %a %d}",
-        "format-alt": "{: %I:%M %p   %a %d-%m-%y}",
+        "format": "{: %I-%M   %a %d}",
+        "format-alt": "{: %I-%M %p   %a %d-%m-%y}",
         "tooltip-format": "{:%r   %a %d %m %Y}",
         "tooltip": false,
     },
