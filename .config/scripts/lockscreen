@@ -1,0 +1,18 @@
+#!/bin/bash
+
+#-------------------------#
+#       LOCKSCREEN        #
+#-------------------------#
+
+swaylock -f \
+	--font 'BebasNeue' \
+	--screenshots \
+	--effect-blur=7x2 \
+	--indicator \
+	--indicator-radius 85 \
+	--ignore-empty-password \
+	--clock \
+	--timestr="%I-%M" \
+	--datestr="%a, %e of %B" \
+
+
