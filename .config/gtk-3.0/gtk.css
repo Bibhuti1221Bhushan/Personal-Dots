@@ -1,0 +1,40 @@
+/************************
+*     HEADERS BAR       *
+************************/
+headerbar button.titlebutton.minimize,
+headerbar button.titlebutton.maximize,
+headerbar button.titlebutton.restore,
+headerbar button.titlebutton.close {
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 100;
+    min-width: 25px;
+    min-height: 25px;
+}
+
+headerbar button.titlebutton.minimize {
+    margin-right: -5px;
+} 
+
+headerbar button.titlebutton.maximize,
+headerbar button.titlebutton.restore {
+    margin-right: -5px;
+}
+
+headerbar button.titlebutton.close {
+    margin-right: 10px;
+}
+
+window.background.csd.geary-main-window>deck>overlay>box.vertical>paned.horizontal>box.sidebar.vertical statusbar,
+window#GearyMainWindow.background.csd>deck>overlay>box.vertical>paned.horizontal>box.sidebar.vertical statusbar {
+    border-bottom-left-radius: 12px;
+}
+
+frame.flat>border,
+frame>border.flat,
+statusbar frame>border {
+    border: none;
+}
+
+

@@ -1,0 +1,10 @@
+/************************
+*     HEADERS BAR       *
+************************/
+windowcontrols button.minimize:not(.suggested-action):not(.destructive-action),
+windowcontrols button.maximize:not(.suggested-action):not(.destructive-action),
+windowcontrols button.close:not(.suggested-action):not(.destructive-action) {
+    min-height: 25px;
+    min-width: 25px;
+}
+
