@@ -4,11 +4,11 @@ if not status then
   return
 end
 
--- CONFIGURE LUALINE WITH MODIFIED THEME
+-- CONFIGURE LUALINE
 lualine.setup({
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'catppuccin',
     component_separators = { left = '', right = ''},
     section_separators = { left = '', right = ''},
     disabled_filetypes = {
@@ -26,29 +26,31 @@ lualine.setup({
   },
   sections = {
     lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_b = {},
     lualine_c = {
       {
         'filename',
+        color = { fg = '#a6adc8', bg = '#313244', gui='bold' },
         file_status = true,      -- DISPLAYS FILE STATUS (READONLY STATUS, MODIFIED STATUS)
-        newfile_status = false,  -- DISPLAY NEW FILE STATUS (NEW FILE MEANS NO WRITE AFTER CREATED)
+        newfile_status = true,   -- DISPLAY NEW FILE STATUS (NEW FILE MEANS NO WRITE AFTER CREATED)
         path = 3,                -- 0: ONLY FILENAME 1: RELATIVE PATH 3: ABSOLUTE PATH + HOME DIRECTORY
         shorting_target = 40,    -- SHORTENS PATH TO LEAVE 40 SPACES IN THE WINDOW
         symbols = {
-          modified = '|+|',      -- TEXT TO SHOW WHEN THE FILE IS MODIFIED.
-          readonly = '|-|',      -- TEXT TO SHOW WHEN THE FILE IS NON-MODIFIABLE OR READONLY.
-          unnamed = '[NO NAME]', -- TEXT TO SHOW FOR UNNAMED BUFFERS.
-          newfile = '[NEW]',     -- TEXT TO SHOW FOR NEWLY CREATED FILE BEFORE FIRST WRITE
+          modified = '- 󰌵',      -- TEXT TO SHOW WHEN THE FILE IS MODIFIED.
+          readonly = '- 󰻂',      -- TEXT TO SHOW WHEN THE FILE IS NON-MODIFIABLE OR READONLY.
+          unnamed = ' NO NAME ', -- TEXT TO SHOW FOR UNNAMED BUFFERS.
+          newfile = ' NEW ',     -- TEXT TO SHOW FOR NEWLY CREATED FILE BEFORE FIRST WRITE
         }
       }
     },
     lualine_x = {
       {
         'fileformat',
+        color = { fg = '#a6adc8', bg = '#363a4f', gui='bold' },
         symbols = {
-          unix = 'Linux', -- e712
-          dos = 'Windows',  -- e70f
-          mac = 'Mac',  -- e711
+          unix = '  ', 
+          dos = ' 󱪈 ',  
+          mac = '  ',  
         }
       }
     },
@@ -57,7 +59,7 @@ lualine.setup({
   },
   inactive_sections = {
     lualine_a = {},
-    lualine_b = {},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
     lualine_c = {},
     lualine_x = {'location', 'encoding', 'filetype'},
     lualine_y = {'progress'},

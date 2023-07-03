@@ -5,25 +5,16 @@
 #   ███╔╝  ╚════██║██╔══██║██╔══██╗██║     
 #  ███████╗███████║██║  ██║██║  ██║╚██████╗
 #  ╚══════╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝
+   
 
-# IF NOT RUNNING INTERACTIVELY, DON'T DO ANYTHING
-[[ $- != *i* ]] && return
-
-# CONFIGURING $PATH
-export PATH=$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.config/scripts:/usr/local/bin:$PATH
-
-# SOURCING ALIAS FILE
-[ -f "${XDG_CONFIG_HOME}/zsh/aliasrc" ] && source "${XDG_CONFIG_HOME}/zsh/aliasrc"
-
-# SETTING DEFAULTS
+# PATH TO YOUR OH-MY-ZSH INSTALLATION.
 export EDITOR='nvim'       # --SET NEOVIM AS DEFAULT TERMINAL EDITOR
 export VISUAL='nvim'       # --SET NEOVIM AS DEFAULT VISUAL EDITOR
 
-# HISTORY IN CUSTOM DIRECTORY
+# HISTORY IN CACHE DIRECTORY
 HISTSIZE=10000
 SAVEHIST=10000
-HISTFILE=~/.config/zsh/.zsh_history
+HISTFILE=/root/.zsh_history
 
 # EXPORT ZSH PLUGINS FOLDER 
 export ZSH="/usr/share/zsh/plugins/" 
@@ -68,6 +59,9 @@ HISTORY_SUBSTRING_SEARCH_HIGHLIGHT_NOT_FOUND='bg=lightgreen, fg=black,bold'
 bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 
+# █▀▄▀█   █   █▀    █▀▀
+# █ ▀ █   █   ▄█    █▄▄
+
 # ZSH SHELL PROMPT 
 setopt PROMPT_SUBST
 # precmd() { print "" }  
@@ -82,11 +76,8 @@ PROMPT="%B%~%b%B%F{87} ➜%f%b "
 # PROMPT='%B%40<..<%~ %b' \
 # PROMPT+='%(?.%(!.%F{white}❯%F{yellow}❯%F{red}.%F{red}❯)%f '
 
-# █▀▄▀█   █   █▀    █▀▀
-# █ ▀ █   █   ▄█    █▄▄
-
-# DT COLOR SCRIPTS
-Color-Bars
-
 # STARSHIP PROMPT
 eval "$(starship init zsh)"
+
+# ALIAS
+alias ls="ls -ah --color --group-directories-first"

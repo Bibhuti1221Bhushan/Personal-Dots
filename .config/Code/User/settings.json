@@ -3,23 +3,25 @@
 {
 //  GLOBAL SETTING   
     "editor.mouseWheelZoom": true,
-    "window.zoomLevel": -0.5,
+    "window.zoomLevel": -0.3,
     "workbench.startupEditor": "none",
     "editor.accessibilitySupport": "off",
     "editor.smoothScrolling": true,
+    "security.workspace.trust.enabled": true,
 
 //  THEMING SETTINGS
-    "workbench.iconTheme": "a-file-icon-vscode",
+    "workbench.iconTheme": "vs-minimal",
     "workbench.productIconTheme": "a-file-icon-vscode-product-icon-theme",
     "workbench.colorTheme": "One Dark Pro Darker",
     "editor.guides.bracketPairs": "active",
     "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "window.menuBarVisibility": "classic"
     "editor.minimap.enabled": false,
     "editor.cursorBlinking": "expand",
     "editor.cursorWidth": 3,
 
 //  FONTS SETTINGS
-    "editor.fontFamily": "'JetbrainsMono Nerd Font'",
+    "editor.fontFamily": "'Droid Sans Mono', 'JetbrainsMono Nerd Font', 'monospace', monospace",
     "editor.fontSize": 13,
 
 //  COMMON SETTINGS
@@ -31,17 +33,17 @@
     "editor.hover.enabled": false,
     "editor.hover.sticky": false,
     "editor.hover.above": false,
-    // "editor.inlayHints.enabled": "off",
-    // "editor.parameterHints.cycle": false,
-    // "editor.parameterHints.enabled": false,
+    "editor.inlayHints.enabled": "off",
+    "editor.parameterHints.cycle": false,
+    "editor.parameterHints.enabled": false,
 
     "git.openRepositoryInParentFolders": "always",
     "terminal.integrated.tabFocusMode": false,
-    "workbench.activityBar.visible": false,
+    "workbench.activityBar.visible": true,
 
 //  EXCLUDE FILES SETTINGS
     "files.exclude": {
-        "**/.git": false
+        "**/.git": false,
     },
 
 //  PROBLEMS & WARNING SETTINGS
@@ -51,7 +53,6 @@
     
 //  ADD LANGUAGE SETTING
     "files.associations": {
-        "*.rasi": "css"
+        "*.rasi": "css",
     },
-   
 }
