@@ -21,7 +21,7 @@
             "temperature", 
             // "bluetooth",
             "clock",
-            "wlr/workspaces", 
+            "hyprland/workspaces", 
         ],
     "modules-center": ["hyprland/window"],
     "modules-right": [
@@ -48,7 +48,7 @@
         "tooltip": false,
     },
 
-    "wlr/workspaces": {
+    "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "format": "{icon}",
